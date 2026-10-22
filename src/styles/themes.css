@@ -1,0 +1,255 @@
+/* Four Selectable Royal Color Worlds: Sunset Royal, Dark Royal, Light Royal, Winter Royal */
+
+/* 1. SUNSET ROYAL: Dark Cinematic Modern Royal */
+/* Colors: Dark charcoal (#1C1E24), White (#FFFFFF), Coral orange (#FF6B57), Muted green (#8A9A86) */
+[data-theme='sunset_royal'] {
+  --background: #1C1E24;
+  --background-secondary: #242730;
+  --surface: rgba(28, 30, 36, 0.92);
+  --surface-light: rgba(36, 39, 48, 0.9);
+  --foreground: #FFFFFF;
+  --primary: #FF6B57;
+  --primary-dark: #D44C3A;
+  --secondary: #8A9A86;
+  --accent: #FF6B57;
+  --accent-bright: #FFA092;
+  --muted: #8A9A86;
+  --border: rgba(255, 107, 87, 0.28);
+  --glow: #FF6B57;
+  --shadow: rgba(0, 0, 0, 0.65);
+  --rim-light: #FFFFFF;
+  --particle-color: #FF6B57;
+
+  /* Aliases */
+  --theme-background: #1C1E24;
+  --theme-surface: rgba(28, 30, 36, 0.92);
+  --theme-surface-secondary: #282C35;
+  --theme-card: rgba(32, 35, 43, 0.95);
+  --theme-border: rgba(255, 107, 87, 0.28);
+  --theme-primary: #FF6B57;
+  --theme-secondary: #8A9A86;
+  --theme-accent: #FF6B57;
+  --theme-accent-soft: #FFA092;
+  --theme-text: #FFFFFF;
+  --theme-text-secondary: #C5CBD3;
+  --theme-glow: rgba(255, 107, 87, 0.55);
+  --theme-gold-glow: rgba(138, 154, 134, 0.45);
+}
+
+[data-theme='sunset_royal'] .glass-panel,
+[data-theme='sunset_royal'] .glass-panel-interactive {
+  background: rgba(28, 30, 36, 0.92);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 107, 87, 0.15);
+  border-color: rgba(255, 107, 87, 0.28);
+}
+
+[data-theme='sunset_royal'] .futuristic-btn {
+  background: rgba(28, 30, 36, 0.92);
+  color: #FFFFFF;
+  border-color: rgba(255, 107, 87, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='sunset_royal'] .futuristic-btn-primary {
+  background: #FF6B57;
+  color: #1C1E24;
+  border-color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(255, 107, 87, 0.45), 0 0 14px rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+}
+
+[data-theme='sunset_royal'] .futuristic-btn-primary:hover {
+  background: #FFA092;
+  border-color: #FFFFFF;
+  color: #1C1E24;
+  box-shadow: 0 6px 25px rgba(255, 107, 87, 0.65);
+}
+
+/* 2. DARK ROYAL: Luxury Editorial Royal */
+/* Colors: Dusty rose terracotta (#A97B76), Cream beige (#F0ECE7), Warm gray taupe (#8C827B), Dark brown (#3B312E), Leaf green (#6A9B53) */
+[data-theme='dark_royal'] {
+  --background: #F0ECE7;
+  --background-secondary: #E5DFD7;
+  --surface: rgba(240, 236, 231, 0.95);
+  --surface-light: #FAF8F5;
+  --foreground: #3B312E;
+  --primary: #A97B76;
+  --primary-dark: #855954;
+  --secondary: #8C827B;
+  --accent: #A97B76;
+  --accent-bright: #C59A95;
+  --muted: #8C827B;
+  --border: #C7BDB6;
+  --glow: #A97B76;
+  --shadow: rgba(59, 49, 46, 0.12);
+  --rim-light: #F0ECE7;
+  --particle-color: #A97B76;
+
+  /* Aliases */
+  --theme-background: #F0ECE7;
+  --theme-surface: rgba(240, 236, 231, 0.95);
+  --theme-surface-secondary: #E5DFD7;
+  --theme-card: #FFFFFF;
+  --theme-border: #C7BDB6;
+  --theme-primary: #A97B76;
+  --theme-secondary: #8C827B;
+  --theme-accent: #A97B76;
+  --theme-accent-soft: #C59A95;
+  --theme-text: #3B312E;
+  --theme-text-secondary: #665B57;
+  --theme-glow: rgba(169, 123, 118, 0.45);
+  --theme-gold-glow: rgba(106, 155, 83, 0.35);
+}
+
+[data-theme='dark_royal'] .glass-panel,
+[data-theme='dark_royal'] .glass-panel-interactive {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #C7BDB6;
+  box-shadow: 0 16px 45px rgba(59, 49, 46, 0.08), 0 0 25px rgba(169, 123, 118, 0.12);
+}
+
+[data-theme='dark_royal'] .futuristic-btn {
+  background: #FFFFFF;
+  color: #3B312E;
+  border-color: #C7BDB6;
+}
+
+[data-theme='dark_royal'] .futuristic-btn-primary {
+  background: #A97B76;
+  color: #F0ECE7;
+  border-color: #8C827B;
+  box-shadow: 0 4px 20px rgba(169, 123, 118, 0.35), 0 0 14px rgba(106, 155, 83, 0.25);
+}
+
+[data-theme='dark_royal'] .futuristic-btn-primary:hover {
+  background: #855954;
+  border-color: #6A9B53;
+  color: #FFFFFF;
+  box-shadow: 0 6px 25px rgba(169, 123, 118, 0.5);
+}
+
+/* 3. LIGHT ROYAL: Bright Luxury Technology (UNCHANGED) */
+/* Colors: Royal white, soft cream, champagne gold, light blue, pearl */
+[data-theme='light_royal'] {
+  --background: #FAF7F2;
+  --background-secondary: #F2EDE4;
+  --surface: #FFFFFF;
+  --surface-light: #F7F3EB;
+  --foreground: #121C2B;
+  --primary: #93C5FD;
+  --primary-dark: #1E3A8A;
+  --secondary: #E2E8F0;
+  --accent: #D4AF37;
+  --accent-bright: #E5C467;
+  --muted: #607085;
+  --border: #E3DACB;
+  --glow: #93C5FD;
+  --shadow: rgba(18, 28, 43, 0.08);
+  --rim-light: #D4AF37;
+  --particle-color: #D4AF37;
+
+  /* Aliases */
+  --theme-background: #FAF7F2;
+  --theme-surface: #FFFFFF;
+  --theme-surface-secondary: #F5EFE4;
+  --theme-card: rgba(255, 255, 255, 0.95);
+  --theme-border: #E3DACB;
+  --theme-primary: #1E3A8A;
+  --theme-secondary: #93C5FD;
+  --theme-accent: #D4AF37;
+  --theme-accent-soft: #E5C467;
+  --theme-text: #121C2B;
+  --theme-text-secondary: #607085;
+  --theme-glow: rgba(147, 197, 253, 0.55);
+  --theme-gold-glow: rgba(212, 175, 55, 0.4);
+}
+
+[data-theme='light_royal'] .glass-panel,
+[data-theme='light_royal'] .glass-panel-interactive {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #E3DACB;
+  box-shadow: 0 16px 45px -8px rgba(18, 28, 43, 0.08), 0 0 25px rgba(212, 175, 55, 0.15);
+}
+
+[data-theme='light_royal'] .futuristic-btn {
+  background: #FFFFFF;
+  color: #121C2B;
+  border-color: #E3DACB;
+}
+
+[data-theme='light_royal'] .futuristic-btn-primary {
+  background: #121C2B;
+  color: #FFFFFF;
+  border-color: #D4AF37;
+  box-shadow: 0 4px 20px rgba(18, 28, 43, 0.25), 0 0 14px rgba(212, 175, 55, 0.35);
+}
+
+[data-theme='light_royal'] .futuristic-btn-primary:hover {
+  background: #D4AF37;
+  border-color: #E5C467;
+  color: #121C2B;
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+}
+
+/* 4. WINTER ROYAL: Luxury Winter Glass Royal */
+/* Colors: Soft winter light green (#E8F3ED), Milk green (#D4EAE0), Luxury white (#FFFFFF), Deep elegant green (#1B4332), Dark premium green-gray (#1D2E26) */
+[data-theme='winter_royal'] {
+  --background: #E8F3ED;
+  --background-secondary: #D4EAE0;
+  --surface: #FFFFFF;
+  --surface-light: #F0F8F4;
+  --foreground: #1D2E26;
+  --primary: #1B4332;
+  --primary-dark: #0F261D;
+  --secondary: #82C29B;
+  --accent: #1B4332;
+  --accent-bright: #2D6A4F;
+  --muted: #628072;
+  --border: rgba(27, 67, 50, 0.18);
+  --glow: #82C29B;
+  --shadow: rgba(27, 67, 50, 0.08);
+  --rim-light: #FFFFFF;
+  --particle-color: #1B4332;
+
+  /* Aliases */
+  --theme-background: #E8F3ED;
+  --theme-surface: #FFFFFF;
+  --theme-surface-secondary: #D4EAE0;
+  --theme-card: rgba(255, 255, 255, 0.95);
+  --theme-border: rgba(27, 67, 50, 0.18);
+  --theme-primary: #1B4332;
+  --theme-secondary: #82C29B;
+  --theme-accent: #1B4332;
+  --theme-accent-soft: #2D6A4F;
+  --theme-text: #1D2E26;
+  --theme-text-secondary: #4A6256;
+  --theme-glow: rgba(130, 194, 155, 0.55);
+  --theme-gold-glow: rgba(27, 67, 50, 0.35);
+}
+
+[data-theme='winter_royal'] .glass-panel,
+[data-theme='winter_royal'] .glass-panel-interactive {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(27, 67, 50, 0.18);
+  box-shadow: 0 16px 45px rgba(27, 67, 50, 0.08), 0 0 25px rgba(130, 194, 155, 0.2);
+}
+
+[data-theme='winter_royal'] .futuristic-btn {
+  background: #FFFFFF;
+  color: #1D2E26;
+  border-color: rgba(27, 67, 50, 0.22);
+}
+
+[data-theme='winter_royal'] .futuristic-btn-primary {
+  background: #1B4332;
+  color: #FFFFFF;
+  border-color: #82C29B;
+  box-shadow: 0 4px 20px rgba(27, 67, 50, 0.3), 0 0 14px rgba(130, 194, 155, 0.35);
+}
+
+[data-theme='winter_royal'] .futuristic-btn-primary:hover {
+  background: #2D6A4F;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: 0 6px 25px rgba(27, 67, 50, 0.45);
+}
