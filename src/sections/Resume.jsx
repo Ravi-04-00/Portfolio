@@ -21,11 +21,14 @@ export default function Resume() {
   ];
 
   const handleDownload = () => {
-    // Generate text/pdf trigger
     const link = document.createElement('a');
-    link.href = '/assets/Ravi-Kumar-Resume.pdf';
-    link.download = 'Ravi-Kumar-Resume.pdf';
-    window.print();
+    link.href = '/assets/Ravi_Kumar_Full_Stack_Developer_Resume.pdf';
+    link.download = 'Ravi_Kumar_Full_Stack_Developer_Resume.pdf';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -69,7 +72,7 @@ export default function Resume() {
                 <span>PROFESSIONAL PROFILE</span>
               </div>
               <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.4rem', fontWeight: 700, marginBottom: '6px' }}>
-                Ravi Kumar
+                Ravikumar
               </h3>
               <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.95rem', color: 'var(--theme-accent)', letterSpacing: '0.08em' }}>
                 {modeInfo.displayTitle}
@@ -253,16 +256,16 @@ export default function Resume() {
                   PYTHON FULL STACK DEVELOPER
                 </div>
                 <div style={{ fontSize: '0.82rem', color: 'var(--theme-text-secondary)', marginTop: '6px' }}>
-                  Email: ravikumars.dev@gmail.com • India • Open to Global Remote Roles
+                  Chennai, Tamil Nadu, India • +91 7339416522 • rk8026569@gmail.com
                 </div>
               </div>
 
               <div style={{ marginBottom: '24px' }}>
                 <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--theme-accent)', marginBottom: '8px' }}>
-                  EXECUTIVE SUMMARY
+                  PROFESSIONAL SUMMARY
                 </h4>
                 <p style={{ fontSize: '0.92rem', color: 'var(--theme-text)', lineHeight: 1.65 }}>
-                  Passionate and detail-oriented Python Full Stack Developer with extensive hands-on experience building scalable web applications using Python, Django REST Framework, PostgreSQL, and React.js. Adept at designing resilient backend architectures, robust relational databases, and fluid user interfaces.
+                  Versatile Python Full Stack Developer with practical experience designing and developing end-to-end, database-driven web applications. Skilled in building server-side logic and RESTful APIs using Django and Django REST Framework, integrating relational PostgreSQL databases, and constructing responsive user interfaces with React.js and Bootstrap. Combines systematic analytical discipline from a scientific background with practical full-stack software engineering.
                 </p>
               </div>
 
@@ -271,7 +274,10 @@ export default function Resume() {
                   TECHNICAL SKILLS
                 </h4>
                 <p style={{ fontSize: '0.9rem', color: 'var(--theme-text-secondary)', lineHeight: 1.6 }}>
-                  Python, Django, Django REST Framework, React.js, PostgreSQL, JavaScript (ES6+), HTML5, CSS3, Bootstrap, REST APIs, Git, GitHub.
+                  <strong>Backend & APIs:</strong> Python, Django, Django REST Framework (DRF), RESTful APIs, JSON Serialization<br />
+                  <strong>Frontend Development:</strong> React.js, JavaScript (ES6+), HTML5, CSS3, Bootstrap, Responsive UI Design<br />
+                  <strong>Database Management:</strong> PostgreSQL, Relational Data Modeling, CRUD Operations, Foreign Key Constraints<br />
+                  <strong>Tools & Architecture:</strong> Git, GitHub, VS Code, Client-Server Architecture, Component-Based UI
                 </p>
               </div>
 
@@ -280,13 +286,25 @@ export default function Resume() {
                   FEATURED WORK
                 </h4>
                 <ul style={{ paddingLeft: '20px', fontSize: '0.9rem', color: 'var(--theme-text)', lineHeight: 1.7 }}>
-                  <li><strong>Food Delivery Ecosystem:</strong> Engineered end-to-end food ordering platform with Django DRF, PostgreSQL, and React.</li>
-                  <li><strong>Student Registration App:</strong> Architected relational academic enrollment system with dynamic validations and metrics.</li>
-                  <li><strong>AI Video Generator:</strong> Designed Python AI video synthesis pipeline integrated with interactive React studio UI.</li>
+                  <li><strong>Food Ecosystem – Multi-Role Food Ordering Platform:</strong> Engineered end-to-end multi-role web platform providing distinct operational interfaces for customers, restaurants, delivery partners, and administrators with Django DRF, PostgreSQL, and React.js.</li>
+                  <li><strong>Smart School Connect – School Communication Portal:</strong> Built centralized communication web portal to streamline the distribution of official announcements and notices between schools and parents with notice filtering and asynchronous HTTP updates.</li>
                 </ul>
               </div>
 
-              <div style={{ textAlign: 'center', paddingTop: '16px' }}>
+              <div style={{ marginBottom: '24px' }}>
+                <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--theme-accent)', marginBottom: '8px' }}>
+                  EDUCATION
+                </h4>
+                <p style={{ fontSize: '0.9rem', color: 'var(--theme-text)', lineHeight: 1.6 }}>
+                  <strong>Bachelor of Science (B.Sc.) in Botany</strong> | Graduated: 2025<br />
+                  Arignar Anna Government Arts College, Villupuram, Tamil Nadu, India<br />
+                  <span style={{ color: 'var(--theme-text-secondary)', fontSize: '0.85rem' }}>
+                    Technical Transition: Transitioned into software engineering through disciplined self-study in full-stack architecture, Python programming, relational database design, and modern React.js frontend development.
+                  </span>
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', paddingTop: '16px', flexWrap: 'wrap' }}>
                 <button
                   onClick={handleDownload}
                   className="futuristic-btn futuristic-btn-primary"
@@ -294,6 +312,16 @@ export default function Resume() {
                   <Download size={16} />
                   <span>DOWNLOAD PDF RESUME</span>
                 </button>
+                <a
+                  href="/assets/Ravi_Kumar_Full_Stack_Developer_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="futuristic-btn"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <Eye size={16} />
+                  <span>OPEN ATS PDF</span>
+                </a>
               </div>
             </div>
           </div>

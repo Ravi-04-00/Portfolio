@@ -12,7 +12,6 @@ import Footer from './components/Footer';
 
 // Sections
 import IntroAnimation from './sections/IntroAnimation';
-import Welcome from './sections/Welcome';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Skills from './sections/Skills';
@@ -26,7 +25,7 @@ function MainPortfolioContent() {
 
   const [showIntro, setShowIntro] = useState(() => {
     try {
-      return localStorage.getItem('ravi-intro-completed') !== 'true';
+      return sessionStorage.getItem('ravi-intro-completed') !== 'true';
     } catch {
       return true;
     }
@@ -61,10 +60,7 @@ function MainPortfolioContent() {
       <Navbar />
 
       <main>
-        {/* Welcome Section with 3D Glowing Orb & 7 Orbiting Tech Badges */}
-        <Welcome />
-
-        {/* Hero Section with Ravi Kumar Real Photo in Royal Frame & Stats */}
+        {/* Hero Section with Ravikumar Real Photo in Royal Frame, RK 3D Logo & Stats */}
         <Hero />
 
         {/* About Section with Real Photo Showcase & Editorial Grid */}

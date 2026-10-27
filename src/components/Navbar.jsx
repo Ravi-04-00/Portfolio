@@ -49,10 +49,14 @@ export default function Navbar() {
   };
 
   const handleDownloadResume = () => {
-    const resumeSection = document.getElementById('resume');
-    if (resumeSection) {
-      resumeSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    const link = document.createElement('a');
+    link.href = '/assets/Ravi_Kumar_Full_Stack_Developer_Resume.pdf';
+    link.download = 'Ravi_Kumar_Full_Stack_Developer_Resume.pdf';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -94,7 +98,7 @@ export default function Navbar() {
                 position: 'relative',
                 width: '44px',
                 height: '44px',
-                borderRadius: '0px',
+                borderRadius: '8px',
                 padding: '2px',
                 background: 'var(--theme-surface)',
                 border: '1px solid var(--theme-accent)',
@@ -102,12 +106,17 @@ export default function Navbar() {
               }}
             >
               <img
-                src="/assets/ravi_kumar.jpg"
-                alt="Ravi Kumar"
+                src="/assets/ravi_kumar_portrait.jpg"
+                alt="Ravikumar"
+                onError={(e) => {
+                  e.currentTarget.src = '/assets/ravi_kumar.jpg';
+                }}
                 style={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover'
+                  objectFit: 'cover',
+                  objectPosition: 'center 15%',
+                  borderRadius: '6px'
                 }}
               />
               <div
@@ -134,7 +143,7 @@ export default function Navbar() {
                 alignItems: 'center',
                 gap: '8px'
               }}>
-                <span>Ravi Kumar</span>
+                <span>Ravikumar</span>
                 <span style={{ fontSize: '0.65rem', fontFamily: 'var(--font-mono)', padding: '2px 6px', border: '1px solid var(--theme-border)', color: 'var(--theme-accent)' }}>
                   RK
                 </span>

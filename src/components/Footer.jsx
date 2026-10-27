@@ -65,10 +65,19 @@ export default function Footer() {
             </div>
             <div>
               <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.2rem', color: 'var(--theme-text)' }}>
-                Ravi Kumar
+                Ravikumar
               </div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--theme-accent)', letterSpacing: '0.12em' }}>
                 PYTHON FULL STACK DEVELOPER
+              </div>
+              <div style={{ display: 'flex', gap: '12px', marginTop: '4px', fontSize: '0.78rem', fontFamily: 'var(--font-mono)' }}>
+                <a href="mailto:rk8026569@gmail.com" style={{ color: 'var(--theme-text-secondary)', textDecoration: 'none' }}>
+                  rk8026569@gmail.com
+                </a>
+                <span style={{ color: 'var(--theme-border)' }}>•</span>
+                <a href="tel:+917339416522" style={{ color: 'var(--theme-text-secondary)', textDecoration: 'none' }}>
+                  +91 7339416522
+                </a>
               </div>
             </div>
           </div>
@@ -105,7 +114,7 @@ export default function Footer() {
             title="Scroll back to top"
           >
             <ArrowUp size={15} />
-            <span>TOP OF WORLD</span>
+            <span>BACK TO TOP</span>
           </button>
         </div>
 
@@ -125,7 +134,7 @@ export default function Footer() {
           }}
         >
           <div>
-            © {new Date().getFullYear()} Ravi Kumar S. All Rights Reserved.
+            © {new Date().getFullYear()} Ravikumar. All Rights Reserved.
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span>ACTIVE UNIVERSE:</span>

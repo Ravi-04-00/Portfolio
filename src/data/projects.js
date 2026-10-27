@@ -3,83 +3,80 @@
 export const PROJECTS_DATA = [
   {
     id: 'food-delivery-ecosystem',
-    name: 'Food Delivery Ecosystem',
-    title: 'Food Delivery Ecosystem',
+    name: 'Food Ecosystem – Multi-Role Platform',
+    title: 'Food Ecosystem Platform',
     category: 'Full Stack',
-    tag: 'E-Commerce & Delivery',
-    technologies: ['Django', 'React', 'PostgreSQL'],
+    tag: 'Multi-Role Ordering Platform',
+    technologies: ['Django', 'DRF', 'React', 'PostgreSQL', 'Bootstrap'],
     features: [
-      'Full-stack architecture with Django REST Framework backend and React single-page frontend',
-      'PostgreSQL relational schema modeling menus, orders, customer profiles, and delivery logistics',
-      'Real-time order state updates, cart calculation, and payment workflow integration',
-      'Responsive food discovery interface with dietary category filters and live search',
-      'Secure token authentication (JWT), role-based permissions, and admin dashboard',
-      'Optimized database queries with Django ORM select_related and prefetch_related'
+      'Multi-role web platform providing distinct operational interfaces for customers, restaurants, delivery partners, and administrators',
+      'Relational PostgreSQL database models with foreign key constraints to manage restaurant menus, customer orders, and delivery statuses',
+      'RESTful API endpoints using Django REST Framework to format, validate, and serialize structured JSON data between backend services and frontend views',
+      'Responsive React.js frontend dashboards with real-time state management and consistent functionality across desktop and mobile devices',
+      'Secure token authentication and role-based permissions across distinct user portals'
     ],
-    summary: 'A scalable end-to-end food ordering and delivery ecosystem engineered with Django, React, and PostgreSQL.',
-    description: 'A comprehensive full-stack delivery platform featuring customer menu browsing, real-time cart state management, checkout transaction flows, order history tracking, and a robust Django admin panel powered by an ACID-compliant PostgreSQL database.',
+    summary: 'An end-to-end multi-role web platform providing distinct operational interfaces for customers, restaurants, delivery partners, and administrators.',
+    description: 'An end-to-end multi-role food ordering platform built with Django REST Framework, PostgreSQL, and React.js. It organizes restaurant menus, customer orders, delivery tracking, and administrative controls with relational database constraints and responsive dashboards.',
     stats: {
-      orders: '10,000+',
-      apiLatency: '< 45ms',
-      uptime: '99.9%'
+      architecture: 'Django REST + React',
+      database: 'PostgreSQL Relational',
+      access: 'Multi-Role Portals'
     },
-    demoUrl: 'https://food-ecosystem.ravikumars.dev',
-    githubUrl: 'https://github.com/ravikumar-dev/food-delivery-ecosystem',
-    badge: 'Flagship Full Stack App',
+    demoUrl: 'https://github.com/Ravi-04-00',
+    githubUrl: 'https://github.com/Ravi-04-00',
+    badge: 'Full Stack Platform',
     accentColor: '#44B78B'
   },
   {
-    id: 'student-registration-app',
-    name: 'Student Registration App',
-    title: 'Student Registration App',
+    id: 'smart-school-connect',
+    name: 'Smart School Connect',
+    title: 'Smart School Connect Portal',
     category: 'Full Stack',
-    tag: 'Academic Portal',
-    technologies: ['Django', 'React', 'PostgreSQL'],
+    tag: 'School Communication Portal',
+    technologies: ['Django', 'DRF', 'React', 'PostgreSQL', 'Bootstrap'],
     features: [
-      'Comprehensive student profile management and academic course enrollment system',
-      'Django REST Framework backend handling data validation, serialization, and business logic',
-      'PostgreSQL relational database with foreign key constraints and automated migrations',
-      'React frontend with dynamic registration forms, instant feedback, and modal dialogs',
-      'Analytical dashboard displaying enrollment trends, student metrics, and department statistics',
-      'Search, filter, and CSV/PDF report export capabilities for administrative users'
+      'Centralized communication web portal streamlining distribution of official announcements, administrative notices, and circulars between schools and parents',
+      'Relational PostgreSQL database models systematically organizing circulars, academic departments, and publishing dates with strict data integrity',
+      'Configured RESTful API endpoints in Django REST Framework to handle notice filtering by academic department and serve structured JSON responses',
+      'Responsive React.js client interface with asynchronous HTTP requests to retrieve and render notices without full-page reloads',
+      'Clean administrative interface for department-level notice publication and audit management'
     ],
-    summary: 'A secure and responsive academic registration platform built using Django, React, and PostgreSQL.',
-    description: 'Designed to streamline academic enrollment workflows. Features multi-step student registration, real-time field validation, course capacity management, grade tracking, and administrative analytics powered by a robust Django and PostgreSQL infrastructure.',
+    summary: 'A centralized communication web portal to streamline the distribution of official announcements and notices between schools and parents.',
+    description: 'A centralized school communication portal built with Django REST Framework, PostgreSQL, and React.js. It enables academic departments to organize and publish circulars, with category-based filtering and asynchronous client-side updates.',
     stats: {
-      students: '5,000+',
-      responseRate: '100%',
-      security: 'Enterprise Grade'
+      backend: 'Django REST Framework',
+      frontend: 'React.js Client',
+      database: 'PostgreSQL Models'
     },
-    demoUrl: 'https://student-registration.ravikumars.dev',
-    githubUrl: 'https://github.com/ravikumar-dev/student-registration-app',
-    badge: 'Enterprise Management System',
+    demoUrl: 'https://github.com/Ravi-04-00',
+    githubUrl: 'https://github.com/Ravi-04-00',
+    badge: 'Communication Portal',
     accentColor: '#387EB8'
   },
   {
     id: 'ai-video-generator',
-    name: 'AI Video Generator',
-    title: 'AI Video Generator',
+    name: 'AI Video Synthesis Tool',
+    title: 'AI Video Synthesis Tool',
     category: 'AI & Python',
-    tag: 'Generative AI',
-    technologies: ['Python', 'React', 'AI'],
+    tag: 'Python Processing Pipeline',
+    technologies: ['Python', 'React', 'REST APIs'],
     features: [
-      'Python-powered AI pipeline transforming text prompts into dynamic video sequences',
-      'React modern frontend with intuitive prompt studio, style selectors, and timeline preview',
-      'Asynchronous task queuing with Python workers for intensive video synthesis',
-      'Real-time generation progress indicators, video playback controls, and export downloads',
-      'Custom prompt optimization algorithms enhancing video narrative and visual coherence',
-      'Cloud storage integration with optimized streaming video formats'
+      'Python-powered media synthesis pipeline transforming structured text prompts into dynamic video sequences',
+      'Responsive React frontend with intuitive prompt studio, parameter selectors, and video playback preview',
+      'Asynchronous task queuing with Python workers for background video processing and status polling',
+      'Structured JSON API endpoints connecting client interface to Python processing services',
+      'Export and download handling for generated media clips'
     ],
-    summary: 'A cutting-edge generative AI video studio driven by Python processing pipelines and a responsive React UI.',
-    description: 'An innovative AI media generation tool enabling creators to synthesize video clips from natural language descriptions. The backend harnesses custom Python pipelines and AI model inference, while the frontend delivers a seamless studio experience in React.',
+    summary: 'A Python-driven media processing application with an interactive React studio UI for prompt-based video generation.',
+    description: 'A Python-powered video generation tool combining backend processing pipelines with an interactive React studio interface. Handles asynchronous task queuing, parameter tuning, and media rendering with responsive controls.',
     stats: {
-      renderTime: 'Fast AI',
-      resolution: '1080p HD',
-      satisfaction: '99%'
+      pipeline: 'Python Processing',
+      frontend: 'React.js Studio',
+      workflow: 'Async Task Queue'
     },
-    demoUrl: 'https://ai-video.ravikumars.dev',
-    githubUrl: 'https://github.com/ravikumar-dev/ai-video-generator',
-    badge: 'AI Innovation Project',
+    demoUrl: 'https://github.com/Ravi-04-00',
+    githubUrl: 'https://github.com/Ravi-04-00',
+    badge: 'Python Project',
     accentColor: '#6D5DFB'
   }
 ];

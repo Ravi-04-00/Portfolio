@@ -25,7 +25,7 @@ const INTRO_TECH_STACK = [
 export default function IntroAnimation({ onComplete }) {
   const [elapsed, setElapsed] = useState(0); // 0 to 10 seconds
   const [isSkipped, setIsSkipped] = useState(false);
-  const [portraitSrc, setPortraitSrc] = useState('/assets/ravi_kumar_clean_portrait.png');
+  const [portraitSrc, setPortraitSrc] = useState('/assets/ravi_kumar_portrait.jpg');
 
   const animationFrameRef = useRef(null);
   const startTimeRef = useRef(null);
@@ -37,6 +37,7 @@ export default function IntroAnimation({ onComplete }) {
     completedRef.current = true;
 
     try {
+      sessionStorage.setItem('ravi-intro-completed', 'true');
       localStorage.setItem('ravi-intro-completed', 'true');
     } catch {
       // LocalStorage fallback
@@ -279,18 +280,37 @@ export default function IntroAnimation({ onComplete }) {
             opacity: elapsed < 1 ? 1 : Math.max(0, 1 - (elapsed - 1) * 5)
           }}
         >
-          {/* Thin blue pulsing quantum beacon (0 to 0.7s) */}
-          {elapsed < 0.8 && (
+          {/* Pulsing blue-gold beacon on black screen (0 to 1.0s) */}
+          {elapsed < 1.0 && (
             <div
               style={{
-                width: '6px',
-                height: '6px',
-                borderRadius: '50%',
-                background: '#00D2FF',
-                animation: 'blueLaserBlink 0.4s ease-in-out infinite',
-                boxShadow: '0 0 20px #00D2FF, 0 0 45px #2F80FF'
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
               }}
-            />
+            >
+              <div
+                style={{
+                  width: '10px',
+                  height: '10px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #00D2FF 0%, #FEDB6A 50%, #D4AF37 100%)',
+                  animation: 'pulseGlow 0.4s ease-in-out infinite',
+                  boxShadow: '0 0 25px #00D2FF, 0 0 45px #D4AF37, 0 0 70px rgba(0, 210, 255, 0.8)'
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  width: '90px',
+                  height: '90px',
+                  borderRadius: '50%',
+                  border: '1.5px dashed rgba(212, 175, 55, 0.65)',
+                  animation: 'rotateOrbit 2s linear infinite'
+                }}
+              />
+            </div>
           )}
 
           {/* Anamorphic Gold-Blue Light Sweep (0.5s to 1.1s) */}
@@ -328,10 +348,11 @@ export default function IntroAnimation({ onComplete }) {
         }}
       >
         {/* ========================================================== */}
-        {/* 1-2 SECONDS: REVEAL RK MONOGRAM WITH METALLIC GOLD 3D DEPTH */}
+        {/* 1-2 SECONDS: REVEAL RK MONOGRAM WITH METALLIC GOLD 3D DEPTH & CINEMATIC LIGHTING */}
         {/* ========================================================== */}
         <div
           style={{
+            position: 'relative',
             transform: elapsed >= 1
               ? `scale(${elapsed >= 8 ? 0.75 : 1}) translateY(${elapsed >= 4 ? (elapsed >= 8 ? -24 : -12) : 0}px)`
               : 'scale(0.5) translateY(20px)',
@@ -340,6 +361,23 @@ export default function IntroAnimation({ onComplete }) {
             marginBottom: elapsed >= 4 ? '14px' : '20px'
           }}
         >
+          {/* Cinematic Spot Lighting Behind RK 3D Logo */}
+          {elapsed >= 1 && (
+            <div
+              style={{
+                position: 'absolute',
+                top: '-35px',
+                left: '-50px',
+                right: '-50px',
+                bottom: '-35px',
+                background: 'radial-gradient(circle, rgba(212, 175, 55, 0.45) 0%, rgba(0, 210, 255, 0.25) 45%, transparent 70%)',
+                filter: 'blur(30px)',
+                pointerEvents: 'none',
+                opacity: elapsed < 2 ? (elapsed - 1) : 0.65,
+                transition: 'opacity 0.6s ease'
+              }}
+            />
+          )}
           <RKLogoMonogram
             size={elapsed >= 8 ? 88 : 110}
             animated={true}
@@ -518,73 +556,52 @@ export default function IntroAnimation({ onComplete }) {
         </div>
 
         {/* ========================================================== */}
-        {/* 8-10 SECONDS: REVEAL REAL PORTRAIT WITH CINEMATIC RIM LIGHT */}
+        {/* 8-10 SECONDS: REVEAL REAL PORTRAIT WITH SMOOTHLY ROUNDED CORNERS */}
         {/* ========================================================== */}
         {elapsed >= 8 && (
           <div
             style={{
               position: 'relative',
               opacity: Math.min(1, (elapsed - 8) * 1.8),
-              transform: `scale(${Math.min(1, 0.88 + (elapsed - 8) * 0.12)}) translateY(0)`,
+              transform: `scale(${Math.min(1, 0.9 + (elapsed - 8) * 0.1)}) translateY(0)`,
               transition: 'opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              marginTop: '4px'
+              marginTop: '8px'
             }}
           >
-            {/* Glowing Dual Gold & Blue Rim Light Halo */}
+            {/* Premium Rounded Rectangle Frame with Thin Gold Border & Blue-Gold Glow */}
             <div
               style={{
                 position: 'relative',
                 width: '180px',
-                height: '180px',
-                borderRadius: '50%',
+                height: '220px',
+                borderRadius: '28px',
+                padding: '4px',
+                background: 'linear-gradient(145deg, rgba(212, 175, 55, 0.7) 0%, rgba(0, 210, 255, 0.5) 50%, rgba(212, 175, 55, 0.9) 100%)',
+                boxShadow: '0 20px 50px rgba(0, 0, 0, 0.85), 0 0 35px rgba(212, 175, 55, 0.4), 0 0 50px rgba(0, 210, 255, 0.35)',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                transition: 'all 0.5s ease'
               }}
             >
-              {/* Outer Cyan Ring */}
+              {/* Inner Frame */}
               <div
                 style={{
-                  position: 'absolute',
-                  inset: '-10px',
-                  borderRadius: '50%',
-                  border: '2px solid rgba(0, 210, 255, 0.75)',
-                  boxShadow: '0 0 35px rgba(0, 210, 255, 0.6), inset 0 0 20px rgba(0, 210, 255, 0.4)',
-                  animation: 'rotateOrbit 16s linear infinite'
-                }}
-              />
-
-              {/* Inner Gold Ring */}
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: '-4px',
-                  borderRadius: '50%',
-                  border: '2px solid rgba(212, 175, 55, 0.85)',
-                  boxShadow: '0 0 30px rgba(212, 175, 55, 0.7)',
-                  animation: 'counterRotate 22s linear infinite'
-                }}
-              />
-
-              {/* User Real Portrait */}
-              <div
-                style={{
-                  width: '168px',
-                  height: '168px',
-                  borderRadius: '50%',
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '24px',
                   overflow: 'hidden',
                   background: '#0B1020',
-                  boxShadow: '0 12px 36px rgba(0, 0, 0, 0.85)'
+                  position: 'relative'
                 }}
               >
                 <img
                   src={portraitSrc}
                   alt="Ravikumar - Python Full Stack Developer"
                   onError={() => {
-                    // Graceful fallback to raw portrait if high-res fails
                     if (portraitSrc !== '/assets/ravi_kumar.jpg') {
                       setPortraitSrc('/assets/ravi_kumar.jpg');
                     }
@@ -602,22 +619,24 @@ export default function IntroAnimation({ onComplete }) {
               <div
                 style={{
                   position: 'absolute',
-                  bottom: '-8px',
-                  background: 'rgba(5, 7, 13, 0.92)',
-                  border: '1px solid #10B981',
-                  boxShadow: '0 0 14px rgba(16, 185, 129, 0.5)',
-                  padding: '3px 10px',
+                  bottom: '-12px',
+                  background: 'rgba(5, 7, 13, 0.94)',
+                  border: '1px solid #D4AF37',
+                  borderRadius: '16px',
+                  boxShadow: '0 0 16px rgba(212, 175, 55, 0.5), 0 4px 12px rgba(0,0,0,0.6)',
+                  padding: '4px 12px',
                   fontSize: '0.68rem',
                   fontFamily: 'var(--font-mono)',
                   letterSpacing: '0.12em',
-                  color: '#10B981',
+                  color: '#FEDB6A',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '5px'
+                  gap: '6px',
+                  whiteSpace: 'nowrap'
                 }}
               >
-                <CheckCircle2 size={12} />
-                <span>VERIFIED IDENTITY</span>
+                <CheckCircle2 size={12} style={{ color: '#10B981' }} />
+                <span>RAVIKUMAR • VERIFIED</span>
               </div>
             </div>
           </div>

@@ -13,24 +13,24 @@ export const DEVELOPER_MODES = {
     description: 'Complete frontend, backend and database development mode',
     heroTag: 'FULL STACK ARCHITECTURE • 2026',
     heroRoleBadge: 'Python • Django • React • PostgreSQL',
-    heroDescription: 'A futuristic premium developer portfolio focused on Python, Django, React, PostgreSQL and modern web experiences.',
-    expertiseChips: ['Python', 'Django', 'React', 'JavaScript', 'HTML', 'CSS', 'PostgreSQL', 'Bootstrap'],
+    heroDescription: 'Python Full Stack Developer focused on building responsive, database-driven web applications with Django and React.',
+    expertiseChips: ['Python', 'Django', 'Django REST Framework', 'React', 'PostgreSQL', 'HTML', 'CSS', 'JavaScript'],
     stats: [
-      { number: '10+', label: '10+ Projects', sub: 'Completed & Tested', color: 'accent' },
-      { number: '8+', label: '8+ Technologies', sub: 'Full Stack Mastery', color: 'primary' },
-      { number: '100%', label: '100% Passion', sub: 'Dedication & Precision', color: 'accent' }
+      { number: 'Full Stack', label: 'Architecture', sub: 'Django, React & PostgreSQL', color: 'accent' },
+      { number: 'REST APIs', label: 'Backend Services', sub: 'Django REST Framework', color: 'primary' },
+      { number: 'Relational DB', label: 'PostgreSQL Models', sub: 'Data Modeling & Integrity', color: 'accent' }
     ],
-    skillsSubtitle: 'Complete technology ecosystem spanning Python backend logic, Django REST APIs, PostgreSQL databases, and dynamic React single-page architectures.',
+    skillsSubtitle: 'Full-stack technology stack covering Python and Django REST backend APIs, PostgreSQL relational databases, and responsive React.js interfaces.',
     coreLabel: 'FULL STACK CORE',
     defaultCategory: 'All',
-    aboutTag: 'RAVI KUMAR • FULL STACK',
+    aboutTag: 'RAVIKUMAR • FULL STACK',
     aboutEditorialLabel: 'PYTHON FULL STACK DEVELOPER',
-    aboutHeading: 'Architecting Scalable Backends & Fluid User Experiences',
-    aboutBio1: 'I build modern, scalable and interactive real-world web applications using Python, Django, React and PostgreSQL. From designing clean relational schemas and robust RESTful APIs to crafting intuitive frontend single-page interfaces, I bridge data logic and user experience seamlessly.',
-    aboutBio2: 'My engineering philosophy focuses on clean modular code, relational data integrity, responsive design standards, and high-performance execution across desktop, tablet, and mobile devices.',
+    aboutHeading: 'Developing Reliable Backends & Responsive User Interfaces',
+    aboutBio1: 'I develop database-driven web applications using Python, Django, Django REST Framework, React.js, and PostgreSQL. I have practical experience building RESTful API endpoints, designing relational database schemas with foreign key integrity, and creating responsive user interfaces.',
+    aboutBio2: 'With a background in scientific discipline and disciplined self-study, I approach software engineering systematically—prioritizing clean architecture, clear documentation, and consistent cross-device performance.',
     welcomeSubtitle: 'PYTHON FULL STACK DEVELOPER',
     welcomeHint: 'Full stack ecosystem • Frontend, backend and database nodes connected in 3D space',
-    projectsSubtitle: 'Massive cinematic project gallery featuring full-stack Django, React, PostgreSQL architectures, and generative Python AI systems.'
+    projectsSubtitle: 'Selected full-stack web applications built with Python, Django, React, and PostgreSQL.'
   },
 
   frontend: {
@@ -40,26 +40,26 @@ export const DEVELOPER_MODES = {
     shortLabel: 'Frontend',
     identity: 'Frontend Developer',
     description: 'Frontend development mode',
-    heroTag: 'INTERACTIVE FRONTEND UNIVERSE • 2026',
+    heroTag: 'INTERACTIVE FRONTEND • 2026',
     heroRoleBadge: 'React.js • Modern JavaScript • Responsive UI • CSS',
     heroDescription: 'Specialized in building modern, responsive, accessible, and high-performance user interfaces with React, JavaScript, and fluid CSS architectures.',
-    expertiseChips: ['React.js', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Bootstrap', 'UI/UX Design', 'REST API Client', 'Tailwind'],
+    expertiseChips: ['React.js', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Bootstrap', 'UI Design', 'REST API Client'],
     stats: [
-      { number: '8+', label: '8+ UI Apps', sub: 'Responsive & Interactive', color: 'primary' },
-      { number: '60fps', label: 'Fluid Motion', sub: 'GPU Accelerated', color: 'accent' },
-      { number: '98%', label: 'Lighthouse Score', sub: 'WCAG Accessibility', color: 'primary' }
+      { number: 'React.js', label: 'Component UI', sub: 'Hooks & State Architecture', color: 'primary' },
+      { number: 'Responsive', label: 'Cross-Device', sub: 'Fluid CSS & Bootstrap', color: 'accent' },
+      { number: 'Accessible', label: 'Clean Standards', sub: 'Semantic HTML5', color: 'primary' }
     ],
     skillsSubtitle: 'Modern frontend ecosystem specializing in component hierarchies, custom React hooks, fluid responsive layouts, and interactive state systems.',
     coreLabel: 'FRONTEND CORE',
     defaultCategory: 'Frontend & UI',
-    aboutTag: 'RAVI KUMAR • FRONTEND',
+    aboutTag: 'RAVIKUMAR • FRONTEND',
     aboutEditorialLabel: 'REACT.JS & FRONTEND SPECIALIST',
     aboutHeading: 'Crafting Thoughtful, Accessible & Performant Interfaces',
-    aboutBio1: 'I specialize in crafting high-impact frontend web applications with React.js, modern JavaScript, HTML5, and responsive CSS systems. I believe great software combines aesthetic elegance with rock-solid accessibility and performance.',
-    aboutBio2: 'From fluid mobile navigation drawers to complex data filtering states and GPU-accelerated micro-interactions, I ensure every pixel serves a purposeful user experience.',
+    aboutBio1: 'I specialize in crafting frontend web applications with React.js, modern JavaScript, HTML5, and responsive CSS systems.',
+    aboutBio2: 'From fluid mobile navigation to asynchronous data filtering states, I ensure interfaces are clean, fast, and accessible across devices.',
     welcomeSubtitle: 'FRONTEND DEVELOPER • REACT.JS',
-    welcomeHint: 'Frontend universe • 3D browser viewports, interactive React nodes and code streams',
-    projectsSubtitle: 'Showcase of interactive single-page applications, responsive e-commerce checkout flows, and dynamic UI portals.'
+    welcomeHint: 'Frontend universe • Responsive React components and interactive UI state',
+    projectsSubtitle: 'Showcase of interactive single-page applications and responsive client interfaces.'
   },
 
   backend: {
@@ -71,23 +71,21 @@ export const DEVELOPER_MODES = {
     description: 'Backend development mode',
     heroTag: 'SCALABLE BACKEND SYSTEMS • 2026',
     heroRoleBadge: 'Python • Django REST Framework • PostgreSQL • APIs',
-    heroDescription: 'Specialized in architecting high-throughput backend APIs, relational database schemas, secure authentication, and resilient server-side services.',
-    expertiseChips: ['Python 3', 'Django', 'Django REST Framework', 'PostgreSQL', 'SQL Indexing', 'JWT Auth', 'CRUD Architecture', 'API Design'],
+    heroDescription: 'Specialized in architecting reliable backend APIs, relational database schemas, secure authentication, and resilient server-side services.',
+    expertiseChips: ['Python', 'Django', 'Django REST Framework', 'PostgreSQL', 'SQL', 'CRUD Architecture', 'API Design'],
     stats: [
-      { number: '15+', label: '15+ Endpoints', sub: 'RESTful Microservices', color: 'accent' },
-      { number: '<40ms', label: 'API Latency', sub: 'Optimized ORM Queries', color: 'primary' },
-      { number: '99.9%', label: 'Uptime Reliability', sub: 'ACID Compliant DB', color: 'accent' }
+      { number: 'Django DRF', label: 'RESTful APIs', sub: 'Serialization & Routing', color: 'accent' },
+      { number: 'PostgreSQL', label: 'Relational Schema', sub: 'Foreign Keys & Constraints', color: 'primary' },
+      { number: 'Security', label: 'Data Integrity', sub: 'Authentication & Permissions', color: 'accent' }
     ],
-    skillsSubtitle: 'Enterprise backend infrastructure focused on Django REST Framework, relational PostgreSQL database design, secure token authentication, and data pipelines.',
+    skillsSubtitle: 'Backend infrastructure focused on Django REST Framework, relational PostgreSQL database design, and secure API endpoints.',
     coreLabel: 'BACKEND CORE',
     defaultCategory: 'Backend & Core',
-    aboutTag: 'RAVI KUMAR • BACKEND',
-    aboutEditorialLabel: 'PYTHON & BACKEND ARCHITECT',
+    aboutTag: 'RAVIKUMAR • BACKEND',
+    aboutEditorialLabel: 'PYTHON & BACKEND DEVELOPER',
     aboutHeading: 'Engineering Secure, Scalable APIs & Relational Databases',
-    aboutBio1: 'I build robust server-side infrastructures using Python and the Django framework, backed by enterprise PostgreSQL databases. My work centers on schema design, query optimization, API security, and high-concurrency data transactions.',
-    aboutBio2: 'Whether architecting multi-tenant authentication systems, optimizing database indexing, or designing RESTful microservice contracts, I prioritize reliability, speed, and data integrity.',
-    welcomeSubtitle: 'BACKEND DEVELOPER • DJANGO & POSTGRESQL',
-    welcomeHint: 'Backend server universe • Request-response streams, API nodes and PostgreSQL database cylinders',
+    aboutBio1: 'I build server-side web applications using Python and the Django framework, backed by PostgreSQL databases. My work centers on schema design, query structure, API serialization, and reliable data transactions.',
+    aboutBio2: 'I design clear RESTful API contracts with Django REST Framework, enforce relational foreign key constraints, and maintain data integrity.',
     projectsSubtitle: 'Engineered backend systems, RESTful API microservices, enterprise databases, and asynchronous AI data pipelines.'
   }
 };

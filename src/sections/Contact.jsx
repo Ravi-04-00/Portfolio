@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, Mail, MapPin, Sparkles, Crown, MessageCircle } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Mail, Phone, MapPin, Sparkles, Crown, MessageCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, InstagramIcon, YoutubeIcon } from '../components/SocialIcons';
 import confetti from 'canvas-confetti';
 import { useTheme } from '../hooks/useTheme';
@@ -90,10 +90,9 @@ export default function Contact() {
   const socialLinks = [
     { name: 'LinkedIn', icon: LinkedinIcon, url: 'https://www.linkedin.com/in/ravi-kumar-04-00z/' },
     { name: 'GitHub', icon: GithubIcon, url: 'https://github.com/Ravi-04-00' },
-    { name: 'Gmail', icon: Mail, url: 'mailto:ravikumars.dev@gmail.com' },
+    { name: 'Gmail', icon: Mail, url: 'mailto:rk8026569@gmail.com' },
     { name: 'WhatsApp', icon: MessageCircle, url: 'https://wa.me/917339416522' },
     { name: 'Instagram', icon: InstagramIcon, url: 'https://www.instagram.com/enjoy_peson_04/' },
-   // { name: 'YouTube', icon: YoutubeIcon, url: 'https://youtube.com/@ravikumar_dev' }
   ];
 
   return (
@@ -102,10 +101,10 @@ export default function Contact() {
 
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">07 • TRANSMISSION PROTOCOL</span>
-          <h2 className="section-title">LET'S BUILD SOMETHING AMAZING</h2>
+          <span className="section-tag">07 • CONTACT</span>
+          <h2 className="section-title">GET IN TOUCH</h2>
           <p className="section-subtitle">
-            Have a project in mind, a scalable Python & React architecture to engineer, or an exciting opportunity? Send a direct dispatch below.
+            Have a project in mind, an opportunity, or questions? Send a message below or contact me directly.
           </p>
         </div>
 
@@ -119,7 +118,7 @@ export default function Contact() {
             alignItems: 'center'
           }}
         >
-          {/* Left Column: Contemplative Editorial Frame with Ravi Kumar Photo */}
+          {/* Left Column: Contact Profile Card */}
           <div
             className="glass-panel"
             style={{
@@ -148,11 +147,11 @@ export default function Contact() {
             <div style={{ position: 'relative', zIndex: 2 }}>
               <div className="hud-badge" style={{ borderColor: 'var(--theme-accent)', color: 'var(--theme-accent)' }}>
                 <Crown size={14} />
-                <span>DIRECT ENGAGEMENT PORTAL</span>
+                <span>DIRECT CONTACT</span>
               </div>
             </div>
 
-            {/* Center: Ravi Kumar Real Photo with 1600ms hover reveal */}
+            {/* Center: Ravikumar Real Photo */}
             <div
               style={{
                 position: 'relative',
@@ -169,7 +168,7 @@ export default function Contact() {
                 style={{
                   width: '120px',
                   height: '120px',
-                  borderRadius: '0px',
+                  borderRadius: '16px',
                   padding: '2px',
                   background: 'var(--theme-surface)',
                   border: '1px solid var(--theme-accent)',
@@ -179,9 +178,12 @@ export default function Contact() {
                 }}
               >
                 <img
-                  src="/assets/ravi_kumar.jpg"
-                  alt="Ravi Kumar"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  src="/assets/ravi_kumar_portrait.jpg"
+                  alt="Ravikumar"
+                  onError={(e) => {
+                    e.currentTarget.src = '/assets/ravi_kumar.jpg';
+                  }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }}
                 />
               </div>
 
@@ -196,7 +198,7 @@ export default function Contact() {
                   }}
                 />
                 <span style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)', color: 'var(--theme-text)', fontWeight: 600, letterSpacing: '0.1em' }}>
-                  AVAILABLE FOR FRONTEND ROLES
+                  AVAILABLE FOR FULL STACK ROLES
                 </span>
               </div>
             </div>
@@ -217,29 +219,35 @@ export default function Contact() {
                 color: 'var(--theme-text)',
                 marginBottom: '6px'
               }}>
-                Ravi Kumar S
+                Ravikumar
               </h4>
 
               <p style={{ fontSize: '0.85rem', color: 'var(--theme-text-secondary)', marginBottom: '14px', lineHeight: 1.5 }}>
-                Frontend Developer specializing in React.js, responsive web engineering, and modern component systems.
+                Python Full Stack Developer specializing in Python, Django, React, and PostgreSQL.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.82rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Mail size={15} style={{ color: 'var(--theme-accent)' }} />
-                  <a href="mailto:ravikumars.dev@gmail.com" style={{ color: 'var(--theme-text)', textDecoration: 'none' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.84rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <Mail size={16} style={{ color: 'var(--theme-accent)' }} />
+                  <a href="mailto:rk8026569@gmail.com" style={{ color: 'var(--theme-text)', textDecoration: 'none' }}>
                     rk8026569@gmail.com
                   </a>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--theme-text-secondary)' }}>
-                  <MapPin size={15} />
-                  <span>India • Available Worldwide via Remote</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <Phone size={16} style={{ color: '#00D2FF' }} />
+                  <a href="tel:+917339416522" style={{ color: 'var(--theme-text)', textDecoration: 'none' }}>
+                    +91 7339416522
+                  </a>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--theme-text-secondary)' }}>
+                  <MapPin size={16} />
+                  <span>Chennai, Tamil Nadu, India • Open to Remote</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: "Send Me a Message" Form Card */}
+          {/* Right Column: "Send a Message" Form Card */}
           <div
             className="glass-panel"
             style={{
@@ -258,10 +266,10 @@ export default function Contact() {
                 color: 'var(--theme-text)'
               }}
             >
-              Initiate Transmission
+              Send a Message
             </h3>
             <p style={{ fontSize: '0.88rem', color: 'var(--theme-text-secondary)', marginBottom: '24px' }}>
-              Fill in your communication below and your transmission will be dispatched immediately.
+              Fill out the form below and I will get back to you promptly.
             </p>
 
             {/* Success Banner */}

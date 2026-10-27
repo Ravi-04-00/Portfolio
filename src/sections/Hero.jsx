@@ -4,7 +4,9 @@ import {
   Mail,
   Shield,
   User,
-  ExternalLink
+  ExternalLink,
+  Download,
+  Phone
 } from 'lucide-react';
 import RKLogoMonogram from '../components/RKLogoMonogram';
 import MessageManagementModal from '../components/MessageManagementModal';
@@ -33,8 +35,8 @@ export default function Hero() {
   // Modal for Message Management
   const [isMsgModalOpen, setIsMsgModalOpen] = useState(false);
 
-  // Portrait fallback
-  const [portraitSrc, setPortraitSrc] = useState('/assets/ravi_kumar_clean_portrait.png');
+  // Portrait fallback to uploaded portrait
+  const [portraitSrc, setPortraitSrc] = useState('/assets/ravi_kumar_portrait.jpg');
 
   // Parallax tilt tracking
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -105,58 +107,77 @@ export default function Hero() {
           {/* ============================================================ */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             
-            {/* Eyebrow: WELCOME TO MY PORTFOLIO */}
+            {/* Eyebrow & RK 3D Logo with Subtle Rotation & Specular Sheen */}
             <div
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '12px',
-                marginBottom: '18px'
+                gap: '14px',
+                marginBottom: '16px'
               }}
             >
-              <span
+              <div
                 style={{
-                  width: '28px',
-                  height: '1.5px',
-                  background: 'linear-gradient(90deg, transparent, #D4AF37)'
+                  transform: 'perspective(600px) rotateY(-8deg) rotateX(4deg)',
+                  transition: 'transform 0.4s ease',
+                  cursor: 'pointer'
                 }}
-              />
-              <span
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '0.84rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.24em',
-                  color: 'var(--theme-accent, #D4AF37)',
-                  textTransform: 'uppercase'
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'perspective(600px) rotateY(14deg) rotateX(-6deg) scale(1.1)';
                 }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'perspective(600px) rotateY(-8deg) rotateX(4deg) scale(1)';
+                }}
+                title="RK Metallic 3D Logo • Ravikumar"
               >
-                WELCOME TO MY PORTFOLIO
-              </span>
-              <span
-                style={{
-                  width: '28px',
-                  height: '1.5px',
-                  background: 'linear-gradient(90deg, #D4AF37, transparent)'
-                }}
-              />
+                <RKLogoMonogram size={46} animated={true} glow={true} withCrown={true} />
+              </div>
+
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+                <span
+                  style={{
+                    width: '24px',
+                    height: '1.5px',
+                    background: 'linear-gradient(90deg, transparent, #D4AF37)'
+                  }}
+                />
+                <span
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.84rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.24em',
+                    color: 'var(--theme-accent, #D4AF37)',
+                    textTransform: 'uppercase'
+                  }}
+                >
+                  PYTHON FULL STACK DEVELOPER
+                </span>
+                <span
+                  style={{
+                    width: '24px',
+                    height: '1.5px',
+                    background: 'linear-gradient(90deg, #D4AF37, transparent)'
+                  }}
+                />
+              </div>
             </div>
 
-            {/* Heading: I'm Ravikumar (White + Warm Gold with Curved Underline) */}
+            {/* Heading: Hi, I'm Ravikumar */}
             <div style={{ position: 'relative', marginBottom: '14px' }}>
               <h1
                 className="hero-main-title"
                 style={{
-                  fontSize: 'clamp(3.1rem, 5.8vw, 5.2rem)',
+                  fontSize: 'clamp(2.9rem, 5.5vw, 4.8rem)',
                   fontFamily: "'Playfair Display', 'Cinzel', Georgia, serif",
                   fontWeight: 800,
                   letterSpacing: '-0.01em',
-                  lineHeight: 1.08,
+                  lineHeight: 1.1,
                   margin: 0,
                   color: '#FFFFFF'
                 }}
               >
-                I'm{' '}
+                Hi, I'm{' '}
                 <span
                   style={{
                     background: 'linear-gradient(135deg, #FFFFFF 0%, #FEDB6A 35%, #D4AF37 70%, #E2C158 100%)',
@@ -196,28 +217,10 @@ export default function Hero() {
               </svg>
             </div>
 
-            {/* Profession: Python Full Stack Developer */}
-            <div
-              style={{
-                fontSize: 'clamp(1.35rem, 2.5vw, 2.1rem)',
-                fontFamily: 'var(--font-royal, Cinzel)',
-                fontWeight: 700,
-                letterSpacing: '0.08em',
-                color: '#00D2FF',
-                textShadow: '0 0 25px rgba(0, 210, 255, 0.6)',
-                marginBottom: '18px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px'
-              }}
-            >
-              <span>Python Full Stack Developer</span>
-            </div>
-
-            {/* Description */}
+            {/* Concise Description: Python, Django, React and PostgreSQL */}
             <p
               style={{
-                fontSize: '1.1rem',
+                fontSize: '1.12rem',
                 color: 'var(--theme-text-secondary, #C5CBD3)',
                 lineHeight: 1.7,
                 maxWidth: '560px',
@@ -225,7 +228,7 @@ export default function Hero() {
                 letterSpacing: '0.01em'
               }}
             >
-              Building modern, responsive and meaningful digital experiences.
+              I build responsive web applications using Python, Django, React and PostgreSQL.
             </p>
 
             {/* Horizontal Tech Badges Row (7 Skills from Developer Profile) */}
@@ -271,12 +274,12 @@ export default function Hero() {
               })}
             </div>
 
-            {/* Primary & Secondary Action Buttons */}
+            {/* Primary & Secondary Action Buttons (3 Buttons as Specified) */}
             <div
               className="hero-buttons-row"
               style={{
                 display: 'flex',
-                gap: '18px',
+                gap: '14px',
                 alignItems: 'center',
                 flexWrap: 'wrap',
                 marginBottom: '36px'
@@ -292,8 +295,8 @@ export default function Hero() {
                   fontWeight: 700,
                   fontSize: '0.92rem',
                   fontFamily: 'var(--font-mono)',
-                  letterSpacing: '0.1em',
-                  padding: '14px 28px',
+                  letterSpacing: '0.08em',
+                  padding: '14px 24px',
                   borderRadius: '30px',
                   border: 'none',
                   cursor: 'pointer',
@@ -316,7 +319,48 @@ export default function Hero() {
                 <span>View Projects</span>
               </button>
 
-              {/* Secondary Button: Contact Me (Glass Pill with ✉ icon) */}
+              {/* Secondary Button: Download Resume (Cyan Glow Pill with Download icon) */}
+              <a
+                href="/assets/Ravi_Kumar_Full_Stack_Developer_Resume.pdf"
+                download="Ravi_Kumar_Full_Stack_Developer_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="interactive-target"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(0, 210, 255, 0.18) 0%, rgba(47, 128, 255, 0.28) 100%)',
+                  backdropFilter: 'blur(10px)',
+                  color: '#00D2FF',
+                  fontWeight: 700,
+                  fontSize: '0.92rem',
+                  fontFamily: 'var(--font-mono)',
+                  letterSpacing: '0.08em',
+                  padding: '13px 24px',
+                  borderRadius: '30px',
+                  border: '1.5px solid rgba(0, 210, 255, 0.65)',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  textDecoration: 'none',
+                  boxShadow: '0 8px 24px rgba(0, 210, 255, 0.25)',
+                  transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)';
+                  e.currentTarget.style.borderColor = '#00D2FF';
+                  e.currentTarget.style.boxShadow = '0 12px 30px rgba(0, 210, 255, 0.45)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 210, 255, 0.65)';
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 210, 255, 0.25)';
+                }}
+              >
+                <Download size={16} />
+                <span>Download Resume</span>
+              </a>
+
+              {/* Tertiary Button: Contact Me (Glass Pill with ✉ icon) */}
               <button
                 onClick={() => scrollTo('contact')}
                 className="interactive-target"
@@ -327,8 +371,8 @@ export default function Hero() {
                   fontWeight: 600,
                   fontSize: '0.92rem',
                   fontFamily: 'var(--font-mono)',
-                  letterSpacing: '0.1em',
-                  padding: '14px 28px',
+                  letterSpacing: '0.08em',
+                  padding: '13px 24px',
                   borderRadius: '30px',
                   border: '1.5px solid rgba(255, 255, 255, 0.25)',
                   cursor: 'pointer',
@@ -353,26 +397,54 @@ export default function Hero() {
               </button>
             </div>
 
-            {/* Sub-script Tag: Code • Build • Create • Grow */}
+            {/* Direct Contact Quick Links */}
             <div
               style={{
-                fontFamily: "'Playfair Display', 'Brush Script MT', Georgia, cursive, serif",
-                fontStyle: 'italic',
-                fontSize: '1.15rem',
-                color: 'rgba(212, 175, 55, 0.85)',
-                letterSpacing: '0.08em',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '12px'
+                gap: '20px',
+                flexWrap: 'wrap',
+                fontSize: '0.86rem',
+                fontFamily: 'var(--font-mono)'
               }}
             >
-              <span>Code</span>
-              <span style={{ fontSize: '0.6rem', color: '#00D2FF' }}>•</span>
-              <span>Build</span>
-              <span style={{ fontSize: '0.6rem', color: '#00D2FF' }}>•</span>
-              <span>Create</span>
-              <span style={{ fontSize: '0.6rem', color: '#00D2FF' }}>•</span>
-              <span>Grow</span>
+              <a
+                href="mailto:rk8026569@gmail.com"
+                style={{
+                  color: 'var(--theme-accent, #D4AF37)',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  transition: 'opacity 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                title="Send email to Ravikumar"
+              >
+                <Mail size={15} />
+                <span>rk8026569@gmail.com</span>
+              </a>
+
+              <span style={{ color: 'rgba(255, 255, 255, 0.2)' }}>•</span>
+
+              <a
+                href="tel:+917339416522"
+                style={{
+                  color: '#00D2FF',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  transition: 'opacity 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                title="Call Ravikumar"
+              >
+                <Phone size={15} />
+                <span>+91 7339416522</span>
+              </a>
             </div>
           </div>
 
@@ -422,10 +494,13 @@ export default function Hero() {
               <div
                 style={{
                   position: 'absolute',
-                  top: '20px',
-                  right: '20px',
-                  width: '320px',
-                  height: '320px',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '450px',
+                  height: '450px',
+                  maxWidth: '96vw',
+                  maxHeight: '96vw',
                   zIndex: 2,
                   pointerEvents: 'none'
                 }}
@@ -436,9 +511,9 @@ export default function Hero() {
                     position: 'absolute',
                     inset: 0,
                     borderRadius: '50%',
-                    border: '1.5px dashed rgba(212, 175, 55, 0.65)',
-                    boxShadow: '0 0 25px rgba(212, 175, 55, 0.35)',
-                    animation: 'rotateOrbit 28s linear infinite'
+                    border: '1.5px dashed rgba(212, 175, 55, 0.45)',
+                    boxShadow: '0 0 25px rgba(212, 175, 55, 0.25)',
+                    animation: 'rotateOrbit 32s linear infinite'
                   }}
                 />
 
@@ -446,18 +521,18 @@ export default function Hero() {
                 <div
                   style={{
                     position: 'absolute',
-                    inset: '18px',
+                    inset: '24px',
                     borderRadius: '50%',
-                    border: '1.5px solid rgba(0, 210, 255, 0.55)',
-                    boxShadow: '0 0 20px rgba(0, 210, 255, 0.3)',
-                    animation: 'counterRotate 34s linear infinite'
+                    border: '1.5px solid rgba(0, 210, 255, 0.35)',
+                    boxShadow: '0 0 20px rgba(0, 210, 255, 0.2)',
+                    animation: 'counterRotate 38s linear infinite'
                   }}
                 />
 
-                {/* 7 Orbiting Skill Badges */}
+                {/* 7 Orbiting Skill Badges in 3D Arrangement */}
                 {HERO_SKILLS.map((skill, index) => {
                   const angle = (index * (360 / HERO_SKILLS.length)) * (Math.PI / 180);
-                  const radius = 145;
+                  const radius = 205;
                   const x = Math.cos(angle) * radius;
                   const y = Math.sin(angle) * radius;
                   const IconComp = skill.icon;
@@ -470,67 +545,133 @@ export default function Hero() {
                         top: '50%',
                         left: '50%',
                         transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                        width: '42px',
-                        height: '42px',
-                        borderRadius: '8px',
-                        background: 'rgba(11, 16, 32, 0.92)',
+                        width: '44px',
+                        height: '44px',
+                        borderRadius: '10px',
+                        background: 'rgba(11, 16, 32, 0.94)',
                         border: `1.5px solid ${skill.color}`,
                         boxShadow: `0 0 16px ${skill.glow}, 0 4px 12px rgba(0,0,0,0.5)`,
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         pointerEvents: 'auto',
-                        animation: 'counterRotate 28s linear infinite'
+                        animation: 'counterRotate 32s linear infinite',
+                        cursor: 'pointer',
+                        transition: 'transform 0.2s ease'
                       }}
-                      title={`${skill.name} - Core Full Stack Skill`}
+                      title={`${skill.name} - Core Skill`}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(1.18)`;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(1)`;
+                      }}
                     >
-                      <IconComp size={22} />
+                      <IconComp size={24} />
                     </div>
                   );
                 })}
               </div>
 
               {/* ======================================================== */}
-              {/* REAL PORTRAIT OF RAVIKUMAR                               */}
+              {/* PREMIUM ROUNDED RECTANGLE HERO PORTRAIT FRAME             */}
               {/* ======================================================== */}
               <div
                 style={{
                   position: 'relative',
-                  width: '380px',
-                  height: '460px',
-                  maxWidth: '85vw',
+                  width: '100%',
+                  maxWidth: '360px',
+                  height: '450px',
                   margin: '0 auto',
                   zIndex: 4,
+                  borderRadius: '30px',
+                  padding: '5px',
+                  background: 'linear-gradient(145deg, rgba(212, 175, 55, 0.75) 0%, rgba(0, 210, 255, 0.45) 50%, rgba(212, 175, 55, 0.85) 100%)',
+                  boxShadow: '0 24px 50px rgba(0, 0, 0, 0.75), 0 0 35px rgba(212, 175, 55, 0.3), 0 0 50px rgba(0, 210, 255, 0.22)',
                   display: 'flex',
-                  alignItems: 'flex-end',
+                  alignItems: 'center',
                   justifyContent: 'center',
-                  overflow: 'visible'
+                  transition: 'transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease',
+                  transform: 'translateZ(20px)'
                 }}
               >
-                <img
-                  src={portraitSrc}
-                  alt="Ravikumar - Python Full Stack Developer"
-                  onError={() => {
-                    if (portraitSrc !== '/assets/ravi_kumar.jpg') {
-                      setPortraitSrc('/assets/ravi_kumar.jpg');
-                    }
-                  }}
+                {/* Inner Bevel & High-Res Image Container */}
+                <div
                   style={{
+                    position: 'relative',
                     width: '100%',
                     height: '100%',
-                    objectFit: 'contain',
-                    objectPosition: 'bottom center',
-                    filter: 'contrast(1.05) brightness(1.02) drop-shadow(0 20px 40px rgba(0, 0, 0, 0.75))',
-                    transform: 'translateZ(20px)'
+                    borderRadius: '25px',
+                    overflow: 'hidden',
+                    background: 'linear-gradient(180deg, #121829 0%, #080C16 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                   }}
-                />
+                >
+                  <img
+                    src={portraitSrc}
+                    alt="Ravikumar - Python Full Stack Developer"
+                    onError={() => {
+                      if (portraitSrc !== '/assets/ravi_kumar.jpg') {
+                        setPortraitSrc('/assets/ravi_kumar.jpg');
+                      }
+                    }}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center 15%',
+                      filter: 'contrast(1.04) brightness(1.02)'
+                    }}
+                  />
+
+                  {/* Subtle Elegant Gold Rim Line at Bottom */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: '40px',
+                      background: 'linear-gradient(180deg, transparent 0%, rgba(3, 5, 10, 0.75) 100%)',
+                      pointerEvents: 'none'
+                    }}
+                  />
+                </div>
+
+                {/* Verified Full Stack Developer Seal Badge */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '-14px',
+                    background: 'rgba(7, 11, 20, 0.95)',
+                    border: '1.5px solid #D4AF37',
+                    borderRadius: '20px',
+                    padding: '4px 14px',
+                    boxShadow: '0 8px 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.4)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.1em',
+                    color: '#FEDB6A',
+                    zIndex: 6,
+                    whiteSpace: 'nowrap'
+                  }}
+                >
+                  <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#10B981', boxShadow: '0 0 8px #10B981' }} />
+                  <span>RAVIKUMAR • FULL STACK</span>
+                </div>
               </div>
 
               {/* ======================================================== */}
               {/* FLOATING GLASSMORPHIC HUD CARD (From Reference Image)    */}
               {/* ======================================================== */}
               <div
-                className="interactive-target"
+                className="interactive-target hero-hud-card"
                 style={{
                   position: 'absolute',
                   top: '12%',

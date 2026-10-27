@@ -1,6 +1,6 @@
 import React from 'react';
-import { Mail, MessageCircle } from 'lucide-react';
-import { LinkedinIcon, GithubIcon, InstagramIcon, YoutubeIcon } from './SocialIcons';
+import { Mail, MessageCircle, Phone } from 'lucide-react';
+import { LinkedinIcon, GithubIcon, InstagramIcon } from './SocialIcons';
 import { useTheme } from '../hooks/useTheme';
 
 export default function SocialBar() {
@@ -20,10 +20,16 @@ export default function SocialBar() {
       title: 'GitHub Repositories'
     },
     {
-      name: 'Gmail',
+      name: 'Email',
       icon: Mail,
-      url: 'https://mail.google.com/mail/u/0/',
-      title: 'Email: ravikumars.dev@gmail.com'
+      url: 'mailto:rk8026569@gmail.com',
+      title: 'Email: rk8026569@gmail.com'
+    },
+    {
+      name: 'Phone',
+      icon: Phone,
+      url: 'tel:+917339416522',
+      title: 'Call: +91 7339416522'
     },
     {
       name: 'WhatsApp',
@@ -36,13 +42,7 @@ export default function SocialBar() {
       icon: InstagramIcon,
       url: 'https://www.instagram.com/enjoy_peson_04/',
       title: 'Instagram Profile'
-    },
-   // {
-     // name: 'YouTube',
-      //icon: YoutubeIcon,
-      //url: 'https://youtube.com/@ravikumar_dev',
-      //title: 'YouTube Channel'
-   // }
+    }
   ];
 
   return (

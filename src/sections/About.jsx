@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Mail, CheckCircle2, Download, Terminal, Quote, Crown } from 'lucide-react';
+import { MapPin, Mail, Phone, CheckCircle2, Download, Terminal, Quote, Crown } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 import { useDeveloperMode } from '../hooks/useDeveloperMode';
 
@@ -8,10 +8,14 @@ export default function About() {
   const { modeInfo } = useDeveloperMode();
 
   const handleDownloadResume = () => {
-    const resumeSection = document.getElementById('resume');
-    if (resumeSection) {
-      resumeSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    const link = document.createElement('a');
+    link.href = '/assets/Ravi_Kumar_Full_Stack_Developer_Resume.pdf';
+    link.download = 'Ravi_Kumar_Full_Stack_Developer_Resume.pdf';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -180,7 +184,7 @@ export default function About() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                 gap: '16px',
                 marginBottom: '36px'
               }}
@@ -194,7 +198,7 @@ export default function About() {
                   <div style={{ fontSize: '0.72rem', color: 'var(--theme-text-secondary)', fontFamily: 'var(--font-mono)' }}>
                     LOCATION
                   </div>
-                  <div style={{ fontWeight: 600, fontSize: '0.92rem' }}>India (Open to Remote)</div>
+                  <div style={{ fontWeight: 600, fontSize: '0.92rem' }}>Chennai, India (Remote)</div>
                 </div>
               </div>
 
@@ -207,7 +211,30 @@ export default function About() {
                   <div style={{ fontSize: '0.72rem', color: 'var(--theme-text-secondary)', fontFamily: 'var(--font-mono)' }}>
                     EMAIL
                   </div>
-                  <div style={{ fontWeight: 600, fontSize: '0.92rem' }}>ravikumars.dev@gmail.com</div>
+                  <a
+                    href="mailto:rk8026569@gmail.com"
+                    style={{ fontWeight: 600, fontSize: '0.92rem', color: 'inherit', textDecoration: 'none' }}
+                  >
+                    rk8026569@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div
+                className="glass-panel"
+                style={{ padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '14px' }}
+              >
+                <Phone size={20} style={{ color: '#00D2FF' }} />
+                <div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--theme-text-secondary)', fontFamily: 'var(--font-mono)' }}>
+                    PHONE
+                  </div>
+                  <a
+                    href="tel:+917339416522"
+                    style={{ fontWeight: 600, fontSize: '0.92rem', color: 'inherit', textDecoration: 'none' }}
+                  >
+                    +91 7339416522
+                  </a>
                 </div>
               </div>
 
@@ -221,7 +248,7 @@ export default function About() {
                     AVAILABILITY
                   </div>
                   <div style={{ fontWeight: 600, fontSize: '0.92rem', color: '#10B981' }}>
-                    Open for {modeInfo.displayTitle} Roles
+                    Open for Opportunities
                   </div>
                 </div>
               </div>

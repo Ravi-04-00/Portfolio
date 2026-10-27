@@ -52,7 +52,7 @@ export const JOURNEY_STEPS = [
     subtitle: 'DevOps & Cloud Delivery',
     technologies: 'Cloud Platforms, CI/CD, Containerization, Performance Tuning',
     period: 'Deployment & Scale',
-    description: 'Mastered modern deployment methodologies, server configurations, database migrations in production, static asset caching, and security hardening for global accessibility.',
-    highlight: 'Maintained 99.9% application uptime and optimized production delivery pipelines.'
+    description: 'Applied modern deployment methodologies, server configurations, database migrations in production, static asset caching, and security hardening for global accessibility.',
+    highlight: 'Configured reliable application deployments and verified production delivery workflows.'
   }
 ];
